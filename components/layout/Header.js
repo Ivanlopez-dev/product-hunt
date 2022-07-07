@@ -1,9 +1,11 @@
 import React from 'react';
-import Buscar from '../ui/Buscar'
-import Navegacion from './Navegacion';
 import Link from 'next/link';
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
+import Buscar from '../ui/Buscar'
+import Navegacion from './Navegacion';
+import Boton from '../ui/Boton';
+
 
 const ContenedorHeader = styled.div`
     max-width: 1200px;
@@ -25,6 +27,9 @@ const Logo = styled.p`
 `;
 
 const Header = () => {
+
+    const usuario = true;
+
     return ( 
         <header
             css={css`
@@ -43,13 +48,36 @@ const Header = () => {
                     <Navegacion />
                 </div>
 
-                <div>
-                    <p>Hey: Iván</p>
+                <div
+                    css={css`
+                        display: flex;
+                        align-items: center;
+                    `}
+                >
+                    { usuario ? (
+                        <>
+                            <p
+                                css={css`
+                                    margin-right: 2rem;
+                            `}
+                            >Hola: Iván</p>
 
-                    <button type="button">Log out</button>
-
-                    <Link href="/">Login</Link>
-                    <Link href="/">Crear Cuenta</Link>
+                            <Boton 
+                            bgColor="true"
+                            >Cerrar sesión</Boton>
+                        </>
+                    ) : (
+                        <>
+                            <Link href="/">
+                                <Boton
+                                    bgColor="true"
+                                >Login</Boton>
+                            </Link>
+                            <Link href="/">
+                                <Boton>Crear Cuenta</Boton>
+                            </Link>
+                        </>
+                    ) }
                 </div>
             </ContenedorHeader>
         </header>
