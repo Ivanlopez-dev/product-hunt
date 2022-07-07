@@ -28,7 +28,7 @@ const Logo = styled.p`
 
 const Header = () => {
 
-    const usuario = true;
+    const usuario = false;
 
     return ( 
         <header
@@ -66,19 +66,18 @@ const Header = () => {
                                     margin-right: 2rem;
                             `}
                             >Hola: Iván</p>
-
                             <Boton 
                             bgColor="true"
                             >Cerrar sesión</Boton>
                         </>
                     ) : (
                         <>
-                            <Link href="/">
+                            <Link href="/login">
                                 <Boton
                                     bgColor="true"
                                 >Login</Boton>
                             </Link>
-                            <Link href="/">
+                            <Link href="/crear-cuenta">
                                 <Boton>Crear Cuenta</Boton>
                             </Link>
                         </>
