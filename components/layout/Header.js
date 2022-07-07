@@ -34,7 +34,9 @@ const Header = () => {
         >
             <ContenedorHeader>
                 <div>
-                    <p>P</p>
+                    <Link href="/">
+                        <Logo>P</Logo>
+                    </Link>
 
                     <Buscar />
 
