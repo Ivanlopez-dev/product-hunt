@@ -3,7 +3,14 @@ import { css } from '@emotion/react'
 import Layout from '../components/layout/Layout'
 import { Formulario, Campo, InputSubmit } from '../components/ui/Formulario'
 
-const CrearCuenta = () => (
+// validaciones
+import useValidacion from '../hooks/useValidacion'
+
+const CrearCuenta = () => {
+
+    const {} = useValidacion()
+
+    return (
     <div>
        <Layout>
         <>
@@ -55,7 +62,7 @@ const CrearCuenta = () => (
         </>
        </Layout>
     </div>
-
 )
+}
 
 export default CrearCuenta
